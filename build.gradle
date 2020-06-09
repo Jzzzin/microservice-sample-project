@@ -1,0 +1,62 @@
+ext {
+    // 라이브러리 버전
+    springBootVersion = '2.3.0.RELEASE'
+    springCloudVersion = 'Hoxton.RELEASE'
+    springDependencyManagementPluginVersion = '1.0.7.BUILD_SNAPSHOT'
+
+    slf4jVersion = ''
+
+    junitVersion = ''
+
+    postgreVersion = ''
+
+    spring = [
+            dependencyMgmtPlugin: "io.spring.gradle:dependency-management-plugun:$springDependencyManagementPluginVersion",
+    ]
+
+    boot = [
+            springBootPlugin    : "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
+            starterWeb          : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
+            actuator            : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
+            starterJpa          : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
+    ]
+
+    cloud = [
+            config              : "org.springframework.cloud:spring-cloud-starter-config:$springCloudVersion",
+            configClient        : "org.springframework.cloud:spring-cloud-config-client:$springCloudVersion",
+            security            : "org.springframework.cloud:spring-cloud-security:$springCloudVersion",
+    ]
+
+    testing = [
+            junit       : ""
+    ]
+}
+
+subprojects {
+
+    apply plugin: "java"
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    group = "com.bloknoma.proto"
+
+    version '0.1-SNAPSHOT'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
+        maven { url "https://repo.spring.io/plugins-snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/libs-milestone" }
+    }
+}
+
+
+// 컴파일 인코딩 에러 메시지 방지
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
