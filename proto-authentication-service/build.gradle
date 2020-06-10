@@ -1,9 +1,10 @@
-//buildscript {
-//    repositories {
-//        mavenCentral()
-//    }
-//    dependencies {
-//        classpath boot.springBootPlugin
-//        classpath spring.dependencyMgmtPlugin
-//    }
-//}
+apply plugin: ProtoServicePlugin
+
+dependencies {
+
+    compile cloud.security, cloud.oauth2, cloud.config, cloud.configClient
+
+    compile boot.starterWeb, boot.actuator, boot.starterJpa
+
+}
+

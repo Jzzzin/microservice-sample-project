@@ -1,30 +1,36 @@
+// plugin
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "io.spring.gradle:dependency-management-plugin:$springDependencyManagementPluginVersion"
+    }
+}
+
+plugins {
+    id "com.github.ben-manes.versions" version "0.28.0"
+}
+
+// dependency property
 ext {
-    // 라이브러리 버전
-    springBootVersion = '2.3.0.RELEASE'
-    springCloudVersion = 'Hoxton.RELEASE'
-    springDependencyManagementPluginVersion = '1.0.7.BUILD_SNAPSHOT'
-
-    slf4jVersion = ''
-
-    junitVersion = ''
-
-    postgreVersion = ''
-
     spring = [
-            dependencyMgmtPlugin: "io.spring.gradle:dependency-management-plugun:$springDependencyManagementPluginVersion",
+
     ]
 
     boot = [
-            springBootPlugin    : "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
-            starterWeb          : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
-            actuator            : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
-            starterJpa          : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
+            starterWeb        : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
+            actuator          : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
+            starterJpa        : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
     ]
 
     cloud = [
-            config              : "org.springframework.cloud:spring-cloud-starter-config:$springCloudVersion",
-            configClient        : "org.springframework.cloud:spring-cloud-config-client:$springCloudVersion",
-            security            : "org.springframework.cloud:spring-cloud-security:$springCloudVersion",
+            config          : "org.springframework.cloud:spring-cloud-starter-config",
+            configClient    : "org.springframework.cloud:spring-cloud-config-client",
+            security        : "org.springframework.cloud:spring-cloud-security",
+            oauth2          : "org.springframework.cloud:spring-cloud-starter-oauth2",
+
     ]
 
     testing = [
@@ -44,17 +50,10 @@ subprojects {
     version '0.1-SNAPSHOT'
 
     repositories {
-        mavenLocal()
         mavenCentral()
-        maven { url "http://repo.spring.io/release" }
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/libs-snapshot" }
-        maven { url "https://repo.spring.io/plugins-snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
         maven { url "https://repo.spring.io/libs-milestone" }
     }
 }
-
 
 // 컴파일 인코딩 에러 메시지 방지
 tasks.withType(JavaCompile) {
