@@ -47,8 +47,6 @@ subprojects {
 
     group = "com.bloknoma.proto"
 
-    version '0.1-SNAPSHOT'
-
     repositories {
         mavenCentral()
         maven { url "https://repo.spring.io/libs-milestone" }
