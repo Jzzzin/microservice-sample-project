@@ -11,15 +11,16 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-@Access(AccessType.FIELD)
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue
+    @Column(name = "userId", nullable = false)
     private String userId;
 
+    @Column(name = "password", nullable = false)
     private String password;
 
+    @Column(name = "enabled", nullable = false)
     private Boolean enabled;
 
     public String getUserId() {

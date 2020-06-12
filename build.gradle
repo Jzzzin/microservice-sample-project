@@ -10,7 +10,7 @@ buildscript {
 }
 
 plugins {
-    id "com.github.ben-manes.versions" version "0.28.0"
+    id "com.github.ben-manes.versions" version "0.20.0"
 }
 
 // dependency property
@@ -20,9 +20,9 @@ ext {
     ]
 
     boot = [
-            starterWeb        : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
-            actuator          : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
-            starterJpa        : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
+            starterWeb      : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
+            actuator        : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
+            starterJpa      : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
     ]
 
     cloud = [
@@ -35,6 +35,11 @@ ext {
 
     testing = [
             junit       : ""
+    ]
+
+    db = [
+            postgres    : "org.postgresql:postgresql:$postgresVersion",
+            h2          : "com.h2database:h2",
     ]
 }
 

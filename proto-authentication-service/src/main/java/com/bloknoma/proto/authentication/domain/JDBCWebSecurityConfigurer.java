@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
@@ -39,12 +40,16 @@ public class JDBCWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         auth
-                .jdbcAuthentication()
-                .dataSource(dataSource)
-                .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery(
-                        "SELECT userId, password, enabled FROM users WHERE userId = ?")
-                .authoritiesByUsernameQuery("SELECT userId, role FROM user_roles WHERE userId = ?");
+//                .jdbcAuthentication()
+//                .dataSource(dataSource)
+//                .passwordEncoder(passwordEncoder())
+//                .usersByUsernameQuery(
+//                        "SELECT userId, password, enabled FROM users WHERE userId = ?")
+//                .authoritiesByUsernameQuery("SELECT userId, role FROM user_roles WHERE userId = ?");
+                .inMemoryAuthentication()
+                .passwordEncoder(encoder)
+                .withUser("john.carnell").password(encoder.encode("password1")).roles("USER");
     }
 }

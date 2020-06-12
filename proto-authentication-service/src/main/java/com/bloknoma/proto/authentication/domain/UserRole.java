@@ -2,24 +2,28 @@ package com.bloknoma.proto.authentication.domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "user_roles")
-@Access(AccessType.FIELD)
 public class UserRole implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "serial")
     private Long user_role_id;
 
-    private String userId;
-
+    @Column(name = "role", nullable = false)
     private String role;
+
+    @Column(name = "userId", nullable = false)
+    private String userId;
 
     public Long getUser_role_id() {
         return user_role_id;
@@ -29,19 +33,19 @@ public class UserRole implements Serializable {
         this.user_role_id = user_role_id;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getRole() {
         return role;
     }
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
