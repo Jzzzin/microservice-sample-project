@@ -14,8 +14,8 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    @Column(name = "userId", nullable = false)
-    private String userId;
+    @Column(name = "user_name", nullable = false)
+    private String username;
 
     @Column(name = "password", nullable = false)
     private String password;
@@ -23,12 +23,12 @@ public class User implements Serializable {
     @Column(name = "enabled", nullable = false)
     private Boolean enabled;
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

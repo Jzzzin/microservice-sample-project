@@ -28,9 +28,11 @@ ext {
     cloud = [
             config          : "org.springframework.cloud:spring-cloud-starter-config",
             configClient    : "org.springframework.cloud:spring-cloud-config-client",
-            security        : "org.springframework.cloud:spring-cloud-security",
+            security        : "org.springframework.cloud:spring-cloud-starter-security",
             oauth2          : "org.springframework.cloud:spring-cloud-starter-oauth2",
+    ]
 
+    security = [
     ]
 
     testing = [

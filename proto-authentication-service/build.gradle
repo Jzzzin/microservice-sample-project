@@ -2,11 +2,9 @@ apply plugin: ProtoServicePlugin
 
 dependencies {
 
-    compile cloud.security, cloud.oauth2 //, cloud.config, cloud.configClient
-
+    compile cloud.config, cloud.configClient, cloud.security, cloud.oauth2
     compile boot.starterWeb, boot.actuator, boot.starterJpa
-
-    compile db.postgres, db.h2
+    compile db.postgres
 
 }
 

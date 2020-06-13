@@ -22,8 +22,8 @@ public class UserRole implements Serializable {
     @Column(name = "role", nullable = false)
     private String role;
 
-    @Column(name = "userId", nullable = false)
-    private String userId;
+    @Column(name = "user_name", nullable = false)
+    private String username;
 
     public Long getUser_role_id() {
         return user_role_id;
@@ -41,11 +41,11 @@ public class UserRole implements Serializable {
         this.role = role;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

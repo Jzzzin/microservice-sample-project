@@ -3,18 +3,19 @@ package com.bloknoma.proto.authentication.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 
 @Configuration
+@Import({JWTOAuth2Config.class, JWTTokenStoreConfig.class})
 public class JDBCWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -40,16 +41,12 @@ public class JDBCWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         auth
-//                .jdbcAuthentication()
-//                .dataSource(dataSource)
-//                .passwordEncoder(passwordEncoder())
-//                .usersByUsernameQuery(
-//                        "SELECT userId, password, enabled FROM users WHERE userId = ?")
-//                .authoritiesByUsernameQuery("SELECT userId, role FROM user_roles WHERE userId = ?");
-                .inMemoryAuthentication()
-                .passwordEncoder(encoder)
-                .withUser("john.carnell").password(encoder.encode("password1")).roles("USER");
+                .jdbcAuthentication()
+                .dataSource(dataSource)
+                .passwordEncoder(passwordEncoder())
+                .usersByUsernameQuery(
+                        "SELECT user_name, password, enabled FROM users WHERE user_name = ?")
+                .authoritiesByUsernameQuery("SELECT user_name, role FROM user_roles WHERE user_name = ?");
     }
 }

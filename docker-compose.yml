@@ -26,7 +26,6 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=p0stgr@s
-      - POSTGRES_DB=proto_local
 
   zipkin:
     image: openzipkin/zipkin:2.21
