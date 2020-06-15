@@ -1,10 +1,9 @@
+CREATE SCHEMA eventuate;
 
-create database eventuate;
-GRANT ALL PRIVILEGES ON eventuate.* TO 'postgres'@'%' WITH GRANT OPTION;
+DROP TABLE IF EXISTS eventuate.cdc_monitoring CASCADE;
 
-USE eventuate;
-
-create table cdc_monitoring (
+CREATE TABLE eventuate.cdc_monitoring (
   reader_id VARCHAR(1000) PRIMARY KEY,
   last_time BIGINT
 );
+

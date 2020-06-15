@@ -19,13 +19,17 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: LC
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-  postgresql:
-    image: postgres:10
+  postgres:
+    build: ./postgresql
     ports:
       - 5432:5432
+    restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=p0stgr@s
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: p0stgr@s
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /var/lib/postgresql/data
 
   zipkin:
     image: openzipkin/zipkin:2.21
@@ -40,12 +44,12 @@ services:
     ports:
       - 8081:8080
     depends_on:
-      - postgresql
+      - postgres
       - zipkin
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql/proto_local
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: p0stgr@s
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres/
+      SPRING_DATASOURCE_USERNAME: bn_authentication_service_user
+      SPRING_DATASOURCE_PASSWORD: bn_authentication_service_password
       SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
       JAVA_OPTS: -Xmx192m
       SPRING_ZIPKIN_BASE_URL: http://zipkin:9411/

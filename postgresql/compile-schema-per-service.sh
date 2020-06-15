@@ -1,14 +1,13 @@
 #! /bin/bash -e
 
-for schema in ftgo_accounting_service ftgo_consumer_service ftgo_order_service ftgo_kitchen_service ftgo_restaurant_service ;
+for schema in bn_authentication_service bn_member_service ;
 do
   user=${schema}_user
   password=${schema}_password
-  cat >> /docker-entrypoint-initdb.d/5.schema-per-service.sql <<END
-  CREATE USER '${user}'@'%' IDENTIFIED BY '$password';
-  create database $schema;
-  GRANT ALL PRIVILEGES ON $schema.* TO '${user}'@'%' WITH GRANT OPTION;
-  USE $schema;
+  cat >> /docker-entrypoint-initdb.d/30.schema-per-service.sql <<END
+  CREATE USER $user WITH PASSWORD '$password';
+  CREATE SCHEMA ${schema} AUTHORIZATION $user;
+  GRANT ALL PRIVILEGES ON SCHEMA ${schema} TO $user;
 END
-    cat /docker-entrypoint-initdb.d/template >> /docker-entrypoint-initdb.d/5.schema-per-service.sql
+    cat | sed -e s/\$\{schema\}/$schema/g /docker-entrypoint-initdb.d/template >> /docker-entrypoint-initdb.d/30.schema-per-service.sql
 done
