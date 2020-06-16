@@ -1,6 +1,6 @@
 #! /bin/bash -e
 
-for schema in bn_authentication_service bn_member_service ;
+for schema in bn_auth_server bn_member_service ;
 do
   user=${schema}_user
   password=${schema}_password
