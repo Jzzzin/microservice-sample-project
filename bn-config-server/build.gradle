@@ -1,0 +1,9 @@
+apply plugin: ProtoServicePlugin
+
+dependencies {
+
+    compile cloud.config, cloud.configServer
+
+    testCompile boot.starterTest
+}
+

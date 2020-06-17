@@ -23,10 +23,12 @@ ext {
             starterWeb      : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
             actuator        : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
             starterJpa      : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
+            starterTest     : "org.springframework.boot:spring-boot-starter-test:$springBootVersion",
     ]
 
     cloud = [
             config          : "org.springframework.cloud:spring-cloud-starter-config",
+            configServer    : "org.springframework.cloud:spring-cloud-config-server",
             configClient    : "org.springframework.cloud:spring-cloud-config-client",
             security        : "org.springframework.cloud:spring-cloud-starter-security",
             oauth2          : "org.springframework.cloud:spring-cloud-starter-oauth2",
@@ -42,6 +44,10 @@ ext {
     db = [
             postgres    : "org.postgresql:postgresql:$postgresVersion",
             h2          : "com.h2database:h2",
+    ]
+
+    misc = [
+
     ]
 }
 
