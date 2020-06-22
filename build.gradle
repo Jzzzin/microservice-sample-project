@@ -16,6 +16,7 @@ plugins {
 // dependency property
 ext {
     spring = [
+            retry           : "org.springframework.retry:spring-retry",
 
     ]
 
@@ -35,6 +36,7 @@ ext {
     ]
 
     security = [
+            rsa             : "org.springframework.security:spring-security-rsa",
     ]
 
     testing = [

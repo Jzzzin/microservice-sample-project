@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bn-auth-server.iml" filepath="$PROJECT_DIR$/.idea/modules/bn-auth-server.iml" group="bn-auth-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bn-auth-server/bn-auth-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bn-auth-server/bn-auth-server_main.iml" group="bn-auth-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bn-auth-server/bn-auth-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bn-auth-server/bn-auth-server_test.iml" group="bn-auth-server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bn-config-server.iml" filepath="$PROJECT_DIR$/.idea/modules/bn-config-server.iml" group="bn-config-server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bn-config-server/bn-config-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bn-config-server/bn-config-server_main.iml" group="bn-config-server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bn-config-server/bn-config-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bn-config-server/bn-config-server_test.iml" group="bn-config-server" />
@@ -9,9 +12,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/buildSrc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/buildSrc_main.iml" group="buildSrc" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc_test.iml" group="buildSrc" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservice_application.iml" filepath="$PROJECT_DIR$/.idea/microservice_application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proto-authentication-service/proto-authentication-service.iml" filepath="$PROJECT_DIR$/.idea/modules/proto-authentication-service/proto-authentication-service.iml" group="proto-authentication-service" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proto-authentication-service/proto-authentication-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/proto-authentication-service/proto-authentication-service_main.iml" group="proto-authentication-service" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proto-authentication-service/proto-authentication-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/proto-authentication-service/proto-authentication-service_test.iml" group="proto-authentication-service" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.bloknoma.proto.authentication.domain;
+package com.bloknoma.authserver.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

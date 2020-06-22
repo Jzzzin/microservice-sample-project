@@ -1,4 +1,4 @@
-package com.bloknoma.proto.authentication;
+package com.bloknoma.authserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ import java.util.Map;
 @RestController
 @EnableAuthorizationServer
 @EnableResourceServer
-public class AuthenticationApplication {
+public class AuthServerApplication {
 
     /*
         main class 위치를 별도의 main package 로 사용하는 경우
@@ -33,6 +33,6 @@ public class AuthenticationApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthenticationApplication.class, args);
+        SpringApplication.run(AuthServerApplication.class, args);
     }
 }

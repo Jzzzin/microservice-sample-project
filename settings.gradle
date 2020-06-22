@@ -1,5 +1,5 @@
 rootProject.name = 'microservice_application'
 
-include 'proto-authentication-service'
 include 'bn-config-server'
+include 'bn-auth-server'
 
