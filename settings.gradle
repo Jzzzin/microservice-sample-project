@@ -2,4 +2,5 @@ rootProject.name = 'microservice_application'
 
 include 'bn-config-server'
 include 'bn-auth-server'
+include 'bn-api-gateway'
 

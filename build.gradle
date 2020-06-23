@@ -25,6 +25,7 @@ ext {
             actuator        : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
             starterJpa      : "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
             starterTest     : "org.springframework.boot:spring-boot-starter-test:$springBootVersion",
+            starterWebflux  : "org.springframework.boot:spring-boot-starter-webflux:$springBootVersion",
     ]
 
     cloud = [
@@ -33,6 +34,9 @@ ext {
             configClient    : "org.springframework.cloud:spring-cloud-config-client",
             security        : "org.springframework.cloud:spring-cloud-starter-security",
             oauth2          : "org.springframework.cloud:spring-cloud-starter-oauth2",
+            gateway         : "org.springframework.cloud:spring-cloud-starter-gateway",
+            wiremock        : "org.springframework.cloud:spring-cloud-contract-wiremock",
+            stubRunner      : "org.springframework.cloud:spring-cloud-starter-contract-stub-runner",
     ]
 
     security = [
@@ -40,16 +44,18 @@ ext {
     ]
 
     testing = [
-            junit       : ""
+            junit           : "junit:junit:$junitVersion",
     ]
 
     db = [
-            postgres    : "org.postgresql:postgresql:$postgresVersion",
-            h2          : "com.h2database:h2",
+            postgres        : "org.postgresql:postgresql:$postgresVersion",
+            h2              : "com.h2database:h2",
     ]
 
     misc = [
-
+            micrometer      : "io.micrometer:micrometer-registry-prometheus:$micrometerVersion",
+            brave           : "io.zipkin.brave:brave-bom:$braveVersion",
+            lang3           : "org.apache.commons:commons-lang3:$lang3Version",
     ]
 }
 

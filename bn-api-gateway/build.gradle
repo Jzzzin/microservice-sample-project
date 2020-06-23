@@ -1,0 +1,33 @@
+apply plugin: ProtoServicePlugin
+apply plugin: 'java'
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-gateway:$springCloudGatewayVersion"
+        mavenBom "org.springframework.cloud:spring-cloud-contract-dependencies:$springCloudContractDependenciesVersion"
+    }
+}
+
+configurations.all {
+    exclude module: "spring-boot-starter-web"
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
+    maven {
+        url "${project.rootDir}/build/repo"
+    }
+}
+
+dependencies {
+
+    compile spring.retry
+    compile cloud.config, cloud.configClient, cloud.gateway
+    compile boot.starterWebflux, boot.actuator
+    compile misc.lang3, misc.brave, misc.micrometer
+
+    testCompile boot.starterTest, testing.junit, cloud.wiremock, cloud.stubRunner
+}

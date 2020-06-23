@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-contract-spec-groovy:2.2.3.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-contract-spec-groovy/2.2.3.RELEASE/83d78dfc9583269a18a86f1ee7c34b40122bb901/spring-cloud-contract-spec-groovy-2.2.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-contract-spec-groovy/2.2.3.RELEASE/4d8c0c6d57df9b673e90abd320b780421462c052/spring-cloud-contract-spec-groovy-2.2.3.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

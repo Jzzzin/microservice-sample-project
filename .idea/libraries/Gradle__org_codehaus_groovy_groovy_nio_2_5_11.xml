@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.codehaus.groovy:groovy-nio:2.5.11">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-nio/2.5.11/21d2f62c7a4ec69e176e24d65d5799a8fe3475d2/groovy-nio-2.5.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-nio/2.5.11/1b5256b27bb88011c1ab520180042258bb5bb019/groovy-nio-2.5.11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

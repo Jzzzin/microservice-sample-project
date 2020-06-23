@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-webflux:5.2.6.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/5.2.6.RELEASE/b9757ca1e9e5c1d31ebbda8580f878ac8cfe3c82/spring-webflux-5.2.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/5.2.6.RELEASE/dc3c455548bcbc89cf1fe8342cd138217b1d5de5/spring-webflux-5.2.6.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-contract-converters:2.2.3.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-contract-converters/2.2.3.RELEASE/27dc0b58deee0f44a7fb3e68cd4e3fc258b6641f/spring-cloud-contract-converters-2.2.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-contract-converters/2.2.3.RELEASE/28ee4297321769bdfba15c01f16864169d95e368/spring-cloud-contract-converters-2.2.3.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

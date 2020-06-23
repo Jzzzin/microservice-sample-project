@@ -1,6 +1,5 @@
 FROM openjdk:8-jdk-alpine
-ENV ENCRYPT_KEY blOkn0m@
-ENV GIT_PASSPHRASE blOkn0m@
+ENV ENCRYPT_KEY blOkn0m@EncKey
 RUN apk --no-cache add curl unzip
 RUN cd /tmp/ && \
     wget --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip" && \
